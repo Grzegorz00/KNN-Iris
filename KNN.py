@@ -9,7 +9,7 @@ def fill_dictionary(path):
     with open(path) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         for row in csv_reader:
-            iris = Iris(row[0:5], row[5])
+            iris = Iris(row[1:5], row[5])
             train_dictionary.update({iris: 0.0})
     return train_dictionary
 
@@ -56,7 +56,6 @@ class KNN:
                 + pow(float(iris.x[1]) - float(train_iris.x[1]), 2)
                 + pow(float(iris.x[2]) - float(train_iris.x[2]), 2)
                 + pow(float(iris.x[3]) - float(train_iris.x[3]), 2)
-                + pow(float(iris.x[4]) - float(train_iris.x[4]), 2)
             )
             self.train_dictionary.update({train_iris: dist})
 
