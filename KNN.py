@@ -32,6 +32,7 @@ class KNN:
             self.count_distance(key)
             self.test_list.update({key: self.find_best_label()})
 
+    def print_output(self):
         print("Test value: -> Trained value:")
         for key, value in self.test_list.items():
             print(str(key.y) + " -> " + str(value))
